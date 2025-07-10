@@ -1,0 +1,16 @@
+
+{% block content %}
+<h1>Книги в библиотеке</h1>
+<div class="books">
+  {% for book in books %}
+    <div class="book">
+      <h2>{{ book.title }}</h2>
+      <p><strong>Автор:</strong> {{ book.author }}</p>
+      <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
+      <img src="{{ book.cover_image.url }}" alt="{{ book.title }} cover" style="width:200px; height:auto;">
+      <p>{{ book.description|slice:":200" }}...</p>
+
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
